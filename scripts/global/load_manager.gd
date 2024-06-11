@@ -12,16 +12,21 @@ var _use_sub_threads: bool = true
 
 
 func _process(_delta: float) -> void:
-	var load_status: ResourceLoader.ThreadLoadStatus = ResourceLoader.load_threaded_get_status(_scene_path, _progress)
+	var load_status: ResourceLoader.ThreadLoadStatus = (
+		ResourceLoader.load_threaded_get_status(_scene_path, _progress)
+		)
 	
 	match load_status:
 		ResourceLoader.ThreadLoadStatus.THREAD_LOAD_INVALID_RESOURCE, \
 		ResourceLoader.ThreadLoadStatus.THREAD_LOAD_FAILED:
+			print("invalid")
 			set_process(false)
 			return
 		ResourceLoader.ThreadLoadStatus.THREAD_LOAD_IN_PROGRESS:
+			print(1)
 			emit_signal("progress_changed", _progress[0])
 		ResourceLoader.ThreadLoadStatus.THREAD_LOAD_LOADED:
+			print(3)
 			_loaded_resource = ResourceLoader.load_threaded_get(_scene_path)
 			emit_signal("progress_changed", _progress[0])
 			emit_signal("load_done")

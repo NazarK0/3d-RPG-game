@@ -170,7 +170,7 @@ func hitOrKill(damage: int) -> void:
 		if Game.player_health <= 0:
 			is_died = true
 			playback.travel(ANIMATION_NODES.DEATH)
-			get_tree().change_scene_to_file("res://scenes/gui/game_over.tscn")
+			#et_tree().change_scene_to_file("res://scenes/gui/game_over.tscn")
 		# knockback
 		#var tween = create_tween()
 		#tween.tween_property(self, "global_position", global_position - (direction / 1.5), 0.2)

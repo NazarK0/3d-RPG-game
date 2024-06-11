@@ -33,6 +33,7 @@ gdscript/warnings/unsafe_call_argument=1
 
 [display]
 
+window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 
 [gui]
