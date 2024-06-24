@@ -12,14 +12,14 @@ config_version=5
 
 config/name="3d RPG Action Game"
 config/version="0.0.1"
-run/main_scene="res://scenes/gui/menu.tscn"
+run/main_scene="res://gui/menu/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*res://scripts/global/game.gd"
-LoadManager="*res://scripts/global/load_manager.gd"
+Game="*res://autoloads/game.gd"
+LoadManager="*res://autoloads/load_manager.gd"
 
 [debug]
 

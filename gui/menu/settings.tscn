@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://glbwoi4jemqg"]
+
+[node name="Settings" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 20.0
+size_flags_horizontal = 0
+text = "Settings"
