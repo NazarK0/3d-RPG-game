@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d0jm0ytlkqyi"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_pc0rh"]
+[ext_resource type="Texture2D" uid="uid://cbfdvi4aloxok" path="res://resources/ui/inventory_icons/potion_03c.png" id="2_88hut"]
+
+[resource]
+script = ExtResource("1_pc0rh")
+texture = ExtResource("2_88hut")
+type = 4
+item_name = "Huge Antidote Potion"
+item_damage = 0
+item_health = 70
+item_defence = 0
+stackable = true
+count = 1
+description = "This is a potion of huge amount of poison negation..."

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://i6264p7yb0jy"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_of1xq"]
+[ext_resource type="Texture2D" uid="uid://lx5qq5ob4ep2" path="res://resources/ui/inventory_icons/Item__44.png" id="2_b6yuj"]
+
+[resource]
+script = ExtResource("1_of1xq")
+texture = ExtResource("2_b6yuj")
+type = 2
+item_name = "Knight Helmet"
+item_damage = 0
+item_health = 0
+item_defence = 3
+stackable = false
+count = 0
+description = "This is a ordinary knight helmet..."

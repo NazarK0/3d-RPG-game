@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://6t7jmpa560dl"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_gim7l"]
+[ext_resource type="Texture2D" uid="uid://b2tekhxfqkll0" path="res://resources/ui/inventory_icons/potion_01a.png" id="2_dh770"]
+
+[resource]
+script = ExtResource("1_gim7l")
+texture = ExtResource("2_dh770")
+type = 4
+item_name = "Small HP Potion"
+item_damage = 0
+item_health = 5
+item_defence = 0
+stackable = true
+count = 1
+description = "This is a potion of small amount of health..."

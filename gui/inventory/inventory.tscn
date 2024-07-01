@@ -1,0 +1,201 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6bhyuwxtbd4n"]
+
+[ext_resource type="Script" path="res://gui/inventory/inventory.gd" id="1_ix03p"]
+[ext_resource type="Script" path="res://gui/inventory/inventory_slot.gd" id="2_64ult"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ix03p")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 674.0
+offset_top = 84.0
+offset_right = 1095.0
+offset_bottom = 637.0
+columns = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 596.0
+offset_bottom = 560.0
+theme_override_constants/separation = 140
+
+[node name="Head" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="InventorySlot3" type="PanelContainer" parent="VBoxContainer/Head"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot6" type="PanelContainer" parent="VBoxContainer/Head"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="Body" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 90
+metadata/_edit_group_ = true
+
+[node name="HandLeft" type="VBoxContainer" parent="VBoxContainer/Body"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="InventorySlot5" type="PanelContainer" parent="VBoxContainer/Body/HandLeft"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="Rings" type="HBoxContainer" parent="VBoxContainer/Body/HandLeft"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="InventorySlot7" type="PanelContainer" parent="VBoxContainer/Body/HandLeft/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot8" type="PanelContainer" parent="VBoxContainer/Body/HandLeft/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot9" type="PanelContainer" parent="VBoxContainer/Body/HandLeft/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot10" type="PanelContainer" parent="VBoxContainer/Body/HandLeft/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot11" type="PanelContainer" parent="VBoxContainer/Body/HandLeft/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot6" type="PanelContainer" parent="VBoxContainer/Body"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="HandRight" type="VBoxContainer" parent="VBoxContainer/Body"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="InventorySlot5" type="PanelContainer" parent="VBoxContainer/Body/HandRight"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="Rings" type="HBoxContainer" parent="VBoxContainer/Body/HandRight"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="InventorySlot7" type="PanelContainer" parent="VBoxContainer/Body/HandRight/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot8" type="PanelContainer" parent="VBoxContainer/Body/HandRight/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot9" type="PanelContainer" parent="VBoxContainer/Body/HandRight/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot10" type="PanelContainer" parent="VBoxContainer/Body/HandRight/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot11" type="PanelContainer" parent="VBoxContainer/Body/HandRight/Rings"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="Legs" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Legs"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="InventorySlot3" type="PanelContainer" parent="VBoxContainer/Legs/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot4" type="PanelContainer" parent="VBoxContainer/Legs/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")
+
+[node name="InventorySlot6" type="PanelContainer" parent="VBoxContainer/Legs"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_64ult")

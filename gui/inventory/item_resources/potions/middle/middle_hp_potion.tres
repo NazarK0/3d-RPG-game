@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dysldhauskanp"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_nxg8s"]
+[ext_resource type="Texture2D" uid="uid://capvohgqpatvs" path="res://resources/ui/inventory_icons/potion_02a.png" id="2_nfxab"]
+
+[resource]
+script = ExtResource("1_nxg8s")
+texture = ExtResource("2_nfxab")
+type = 4
+item_name = "Middle HP Potion"
+item_damage = 0
+item_health = 25
+item_defence = 0
+stackable = true
+count = 1
+description = "This is a potion of middle amount of health..."

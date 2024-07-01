@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cc8ap07720g8w"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_qadqe"]
+[ext_resource type="Texture2D" uid="uid://cb6elut3gnqti" path="res://resources/ui/inventory_icons/potion_01b.png" id="2_7tuko"]
+
+[resource]
+script = ExtResource("1_qadqe")
+texture = ExtResource("2_7tuko")
+type = 4
+item_name = "Small Mana Potion"
+item_damage = 0
+item_health = 5
+item_defence = 0
+stackable = true
+count = 1
+description = "This is a potion of small amount of mana..."

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dk3bhpv5a03oa"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_et1w5"]
+[ext_resource type="Texture2D" uid="uid://but545fetblyc" path="res://resources/ui/inventory_icons/potion_02c.png" id="2_uogci"]
+
+[resource]
+script = ExtResource("1_et1w5")
+texture = ExtResource("2_uogci")
+type = 4
+item_name = "Middle Antidote Potion"
+item_damage = 0
+item_health = 25
+item_defence = 0
+stackable = true
+count = 1
+description = "This is a potion of middle amount of poison negation..."

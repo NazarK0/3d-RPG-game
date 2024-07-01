@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b5j4pkydd0lcx"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_3gaoq"]
+[ext_resource type="Texture2D" uid="uid://ycdccichpwqf" path="res://resources/ui/inventory_icons/Item__02.png" id="2_xd2ni"]
+
+[resource]
+script = ExtResource("1_3gaoq")
+texture = ExtResource("2_xd2ni")
+type = 0
+item_name = "Default Sword"
+item_damage = 3
+item_health = 0
+item_defence = 0
+stackable = false
+count = 0
+description = "This is a ordinary sword..."

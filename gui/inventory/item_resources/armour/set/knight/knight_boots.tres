@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cjbjufbnkf34r"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_psmxm"]
+[ext_resource type="Texture2D" uid="uid://lp0nsbrsqtly" path="res://resources/ui/inventory_icons/Item__49.png" id="2_68gfp"]
+
+[resource]
+script = ExtResource("1_psmxm")
+texture = ExtResource("2_68gfp")
+type = 6
+item_name = "Knight Boots"
+item_damage = 0
+item_health = 0
+item_defence = 2
+stackable = false
+count = 0
+description = "This is a ordinary knight boots..."

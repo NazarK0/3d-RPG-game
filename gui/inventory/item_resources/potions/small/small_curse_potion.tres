@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cl51f8ux7277g"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_4c7my"]
+[ext_resource type="Texture2D" uid="uid://b7y0vgasiuvpm" path="res://resources/ui/inventory_icons/potion_01d.png" id="2_q286h"]
+
+[resource]
+script = ExtResource("1_4c7my")
+texture = ExtResource("2_q286h")
+type = 4
+item_name = "Small Bless Potion"
+item_damage = 0
+item_health = 5
+item_defence = 0
+stackable = true
+count = 1
+description = "This is a potion of small amount of curse negation..."

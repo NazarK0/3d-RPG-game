@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bk06brrw6uk0c"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_n8ov7"]
+[ext_resource type="Texture2D" uid="uid://xhmugotvrn85" path="res://resources/ui/inventory_icons/potion_03a.png" id="2_6lqyu"]
+
+[resource]
+script = ExtResource("1_n8ov7")
+texture = ExtResource("2_6lqyu")
+type = 4
+item_name = "Huge HP Potion"
+item_damage = 0
+item_health = 70
+item_defence = 0
+stackable = true
+count = 1
+description = "This is a potion of huge amount of health..."

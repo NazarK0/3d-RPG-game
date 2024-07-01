@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://qbihalwiww8m"]
+
+[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_gc057"]
+[ext_resource type="Texture2D" uid="uid://cx0x2v3vbffwx" path="res://resources/ui/inventory_icons/potion_02b.png" id="2_3i32j"]
+
+[resource]
+script = ExtResource("1_gc057")
+texture = ExtResource("2_3i32j")
+type = 4
+item_name = "Middle Mana Potion"
+item_damage = 0
+item_health = 25
+item_defence = 0
+stackable = true
+count = 1
+description = "This is a potion of middle amount of mana..."
