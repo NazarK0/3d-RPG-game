@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c0wto35igxxcg"]
+
+[ext_resource type="Script" path="res://gui/inventory/inventory_data.gd" id="1_xt3pt"]
+[ext_resource type="Texture2D" uid="uid://b4pp62334kdg4" path="res://resources/ui/inventory_icons/Item__40.png" id="2_phxlu"]
+
+[resource]
+script = ExtResource("1_xt3pt")
+texture = ExtResource("2_phxlu")
+type = 11
+item_name = "Simon Ring"
+item_damage = 0
+item_health = 0
+item_defence = 1
+stackable = false
+count = 1
+description = "This is a ring of Simon apostle..."

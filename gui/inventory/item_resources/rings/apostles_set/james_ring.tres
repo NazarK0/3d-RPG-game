@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://gtawxyfydr75"]
+
+[ext_resource type="Script" path="res://gui/inventory/inventory_data.gd" id="1_1i51f"]
+[ext_resource type="Texture2D" uid="uid://b4pp62334kdg4" path="res://resources/ui/inventory_icons/Item__40.png" id="2_3vl4t"]
+
+[resource]
+script = ExtResource("1_1i51f")
+texture = ExtResource("2_3vl4t")
+type = 11
+item_name = "James ring"
+item_damage = 0
+item_health = 0
+item_defence = 1
+stackable = false
+count = 1
+description = "This is a ring of James apostle..."

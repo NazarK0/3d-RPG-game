@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://co2ptjun1r1e2"]
 
-[ext_resource type="Script" path="res://gui/inventory/item_data.gd" id="1_wg18l"]
+[ext_resource type="Script" path="res://gui/inventory/inventory_data.gd" id="1_wg18l"]
 [ext_resource type="Texture2D" uid="uid://d1mqw0xijkc34" path="res://resources/ui/inventory_icons/potion_02d.png" id="2_x3s20"]
 
 [resource]

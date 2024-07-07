@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cknr2lp43vh0i"]
+
+[ext_resource type="Script" path="res://gui/inventory/inventory_data.gd" id="1_2n3a3"]
+[ext_resource type="Texture2D" uid="uid://b4pp62334kdg4" path="res://resources/ui/inventory_icons/Item__40.png" id="2_kdy4e"]
+
+[resource]
+script = ExtResource("1_2n3a3")
+texture = ExtResource("2_kdy4e")
+type = 11
+item_name = "Philip Ring"
+item_damage = 0
+item_health = 0
+item_defence = 1
+stackable = false
+count = 1
+description = "This is a ring of Philip apostle..."

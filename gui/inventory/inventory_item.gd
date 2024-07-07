@@ -1,8 +1,8 @@
 class_name InventoryItem extends TextureRect
 
-@export var _data: ItemData
+@export var _data: InventoryData
 
-func init(data: ItemData) -> void:
+func init(data: InventoryData) -> void:
 	_data = data
 	
 func makeDragPreview(at_position: Vector2) -> Control:
