@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://betvnbwe78knm"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=3 format=3 uid="uid://betvnbwe78knm"]
 
 [ext_resource type="Script" path="res://gui/inventory/inventory_data.gd" id="1_5to8v"]
 [ext_resource type="Texture2D" uid="uid://ubf73prgi7kp" path="res://resources/ui/inventory_icons/potion_01c.png" id="2_rwxtl"]
@@ -7,6 +7,7 @@
 script = ExtResource("1_5to8v")
 texture = ExtResource("2_rwxtl")
 type = 4
+equipment_type = Array[int]([])
 item_name = "Small Antidote Potion"
 item_damage = 0
 item_health = 5

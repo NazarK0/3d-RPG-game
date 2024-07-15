@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6bhyuwxtbd4n"]
+[gd_scene load_steps=4 format=3 uid="uid://c6bhyuwxtbd4n"]
 
 [ext_resource type="Script" path="res://gui/inventory/inventory.gd" id="1_ix03p"]
-[ext_resource type="Script" path="res://gui/inventory/equipment_system/equipment_slot.gd" id="3_f1pkp"]
+[ext_resource type="Texture2D" uid="uid://clpkuhi3eqkeu" path="res://gui/inventory/tab_icons/weapon.png" id="2_bbkgf"]
+[ext_resource type="Script" path="res://gui/inventory/inventory_tabs.gd" id="3_ug45r"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -10,270 +11,361 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_ix03p")
 
-[node name="Equpment" type="VBoxContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-offset_left = 16.0
-offset_top = 72.0
-offset_right = 596.0
-offset_bottom = 560.0
-theme_override_constants/separation = 140
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 620.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Head" type="VBoxContainer" parent="Equpment"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_top = 17
+theme_override_constants/margin_right = 17
+theme_override_constants/margin_bottom = 17
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(340, 340)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-alignment = 1
+texture = ExtResource("2_bbkgf")
 
-[node name="Helmet" type="PanelContainer" parent="Equpment/Head"]
-custom_minimum_size = Vector2(32, 32)
+[node name="DescriptionBlock" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
 
-[node name="Necklace" type="PanelContainer" parent="Equpment/Head"]
-custom_minimum_size = Vector2(32, 32)
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DescriptionBlock"]
+custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 4
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ante turpis, mollis auctor diam nec, pretium imperdiet ipsum. Etiam bibendum, felis et egestas accumsan, nisi turpis cursus tellus, non laoreet nisl nibh a nisi. Praesent lacinia dictum leo, id sagittis nulla suscipit sit amet. Pellentesque scelerisque mattis volutpat. Phasellus at convallis magna. Nam eros mi, hendrerit id dictum sit amet, gravida non urna. Ut ultricies fringilla libero, ac sollicitudin ipsum feugiat nec. Morbi nec ipsum a lorem ornare lacinia.
 
-[node name="Body" type="HBoxContainer" parent="Equpment"]
+Fusce ut lectus tristique, imperdiet dolor non, molestie libero. Fusce vitae mauris vehicula, maximus massa id, molestie velit. Pellentesque auctor neque et molestie lobortis. Cras sit amet lectus tempor, blandit leo eget, aliquam risus. Morbi imperdiet urna ante, eu pulvinar ipsum consectetur non. Maecenas tempor mattis elit, ac condimentum tellus volutpat sit amet. Quisque arcu augue, cursus mollis libero at, mollis eleifend lacus. Aliquam fermentum interdum sem. Praesent non lectus ultrices, feugiat sem quis, eleifend lorem. Phasellus hendrerit urna id placerat eleifend. Sed elementum vitae lacus at mollis. Duis ultrices lacus non nisi convallis luctus. Cras vel commodo nisl. Vivamus lorem lorem, commodo nec nunc sed, consectetur sodales enim. Aenean posuere rhoncus erat, vitae cursus magna euismod sed.
+
+Nam varius diam sit amet risus hendrerit, vel elementum tellus eleifend. Vivamus imperdiet odio eget urna elementum ultrices. Nullam tempus bibendum quam eleifend placerat. Maecenas mollis risus malesuada nulla venenatis, rhoncus imperdiet arcu tempor. Suspendisse sed nisi pellentesque, ornare neque eu, placerat nunc. Nulla odio ligula, malesuada at feugiat posuere, tristique ac quam. Quisque augue ex, laoreet sit amet finibus id, tristique eget nisi. Sed pharetra mauris ut lobortis faucibus. Morbi non leo eu dui consectetur suscipit ac ut mi. Morbi interdum, nisi non fringilla dignissim, odio risus congue ligula, nec luctus elit massa non quam.
+
+Vestibulum volutpat mattis pretium. Pellentesque non pulvinar massa, non condimentum turpis. Mauris et scelerisque mauris. Nullam hendrerit, ex ut commodo suscipit, enim ante blandit neque, eu interdum dui velit nec libero. Duis nec scelerisque lacus. Sed tincidunt pharetra lacus, a viverra dui aliquam ut. Aenean placerat commodo feugiat. Nullam ac bibendum elit, ut lobortis nulla. Etiam ac enim ut nisi mollis iaculis. Curabitur nec tincidunt odio.
+
+Nulla vehicula id dui et rhoncus. Vestibulum nec rutrum justo. Fusce auctor auctor dolor. Maecenas vel nunc porta, elementum nulla sed, semper massa. Curabitur ac scelerisque dui, at imperdiet libero. Nam vehicula velit rhoncus feugiat dapibus. Fusce non enim efficitur eros blandit gravida. Donec sodales vitae nunc eget gravida. Quisque finibus, risus id aliquet feugiat, est ligula tempor eros, sed congue purus est sed ipsum. Duis ornare dui vel nunc lobortis hendrerit. Maecenas condimentum posuere enim, quis fringilla ipsum dapibus quis. Cras sed velit mi."
+
+[node name="ItemStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 90
-metadata/_edit_group_ = true
 
-[node name="HandLeft" type="VBoxContainer" parent="Equpment/Body"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats"]
 layout_mode = 2
-theme_override_constants/separation = 6
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
 
-[node name="Glove" type="PanelContainer" parent="Equpment/Body/HandLeft"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 3
 
-[node name="Fingers" type="HBoxContainer" parent="Equpment/Body/HandLeft"]
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 6
-alignment = 1
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
 
-[node name="Ring0" type="PanelContainer" parent="Equpment/Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
 
-[node name="Ring1" type="PanelContainer" parent="Equpment/Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Weight"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
+text = "Weight:"
 
-[node name="Ring2" type="PanelContainer" parent="Equpment/Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Weight"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
+text = "10.56 kg
+"
 
-[node name="Ring3" type="PanelContainer" parent="Equpment/Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
 
-[node name="Ring4" type="PanelContainer" parent="Equpment/Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Damage"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
+text = "Damage:"
 
-[node name="Weapon" type="PanelContainer" parent="Equpment/Body/HandLeft"]
-custom_minimum_size = Vector2(32, 32)
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Damage"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 8
+text = "106
+"
 
-[node name="Armour" type="PanelContainer" parent="Equpment/Body"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 1
 
-[node name="HandRight" type="VBoxContainer" parent="Equpment/Body"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Health"]
 layout_mode = 2
-theme_override_constants/separation = 6
+text = "Health:"
 
-[node name="Glove" type="PanelContainer" parent="Equpment/Body/HandRight"]
-custom_minimum_size = Vector2(32, 32)
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 3
+value = 55.0
 
-[node name="Fingers" type="HBoxContainer" parent="Equpment/Body/HandRight"]
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 6
-alignment = 1
+theme_override_constants/separation = 3
 
-[node name="Ring5" type="PanelContainer" parent="Equpment/Body/HandRight/Fingers"]
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
-script = ExtResource("3_f1pkp")
-_type = 2
 
-[node name="Ring6" type="PanelContainer" parent="Equpment/Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats/Stregth"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
+text = "Strength:"
 
-[node name="Ring7" type="PanelContainer" parent="Equpment/Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats/Stregth"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
+text = "18
+"
 
-[node name="Ring8" type="PanelContainer" parent="Equpment/Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
 
-[node name="Ring9" type="PanelContainer" parent="Equpment/Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 2
+text = "Agility:"
 
-[node name="Weapon" type="PanelContainer" parent="Equpment/Body/HandRight"]
-custom_minimum_size = Vector2(32, 32)
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 9
+text = "8
+"
 
-[node name="Legs" type="VBoxContainer" parent="Equpment"]
+[node name="BagStats" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 6
-alignment = 1
 
-[node name="Pants" type="PanelContainer" parent="Equpment/Legs"]
-custom_minimum_size = Vector2(32, 32)
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Equpment/Legs"]
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 6
 
-[node name="Anklet1" type="PanelContainer" parent="Equpment/Legs/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats/VBoxContainer/Weight"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 6
+text = "Bag Weight:"
 
-[node name="Anklet2" type="PanelContainer" parent="Equpment/Legs/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats/VBoxContainer/Weight"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 6
+text = "10.56 kg
+"
 
-[node name="Boots" type="PanelContainer" parent="Equpment/Legs"]
-custom_minimum_size = Vector2(32, 32)
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats/VBoxContainer/Weight"]
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("3_f1pkp")
-_type = 7
+value = 90.0
 
-[node name="TabContainer" type="TabContainer" parent="."]
+[node name="InventoryTabs" type="TabContainer" parent="."]
 layout_mode = 0
 offset_left = 660.0
 offset_top = 5.0
 offset_right = 1142.0
 offset_bottom = 639.0
+script = ExtResource("3_ug45r")
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer"]
+[node name="TabWeapon" type="MarginContainer" parent="InventoryTabs"]
 layout_mode = 2
 theme_override_constants/margin_left = 7
 theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 7
 theme_override_constants/margin_bottom = 7
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabWeapon"]
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="All" type="GridContainer" parent="TabContainer/MarginContainer/ScrollContainer"]
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabWeapon/ScrollContainer"]
 layout_mode = 2
 columns = 13
 
-[node name="Weapon" type="GridContainer" parent="TabContainer"]
+[node name="TabShield" type="MarginContainer" parent="InventoryTabs"]
 visible = false
 layout_mode = 2
-columns = 12
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
 
-[node name="Shield" type="GridContainer" parent="TabContainer"]
-visible = false
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabShield"]
 layout_mode = 2
-columns = 12
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="Armour" type="GridContainer" parent="TabContainer"]
-visible = false
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabShield/ScrollContainer"]
 layout_mode = 2
-columns = 12
+columns = 13
 
-[node name="Ring" type="GridContainer" parent="TabContainer"]
+[node name="TabArmour" type="MarginContainer" parent="InventoryTabs"]
 visible = false
 layout_mode = 2
-columns = 12
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
 
-[node name="Cure" type="GridContainer" parent="TabContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabArmour"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabArmour/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabRings" type="MarginContainer" parent="InventoryTabs"]
 visible = false
 layout_mode = 2
-columns = 12
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabRings"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabRings/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabCure" type="MarginContainer" parent="InventoryTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabCure"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabCure/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabKeys" type="MarginContainer" parent="InventoryTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabKeys"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabKeys/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabSpell" type="MarginContainer" parent="InventoryTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabSpell"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabSpell/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabPiromancy" type="MarginContainer" parent="InventoryTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabPiromancy"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabPiromancy/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabIngredients" type="MarginContainer" parent="InventoryTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabIngredients"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabIngredients/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabBooks" type="MarginContainer" parent="InventoryTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabBooks"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabBooks/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabNotes" type="MarginContainer" parent="InventoryTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabNotes"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabNotes/ScrollContainer"]
+layout_mode = 2
+columns = 13
+
+[node name="TabMisc" type="MarginContainer" parent="InventoryTabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryTabs/TabMisc"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Grid" type="GridContainer" parent="InventoryTabs/TabMisc/ScrollContainer"]
+layout_mode = 2
+columns = 13

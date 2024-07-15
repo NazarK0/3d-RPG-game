@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		#else:
 			#
 			#
-		print(Game.fingers_equipment, " RING NUMBER")
+		#print(Game.fingers_equipment, " RING NUMBER")
 	
 
 

@@ -20,18 +20,18 @@ func _on_just_hit_timeout() -> void:
 
 
 func _on_chase_zone_body_entered(body: Node3D) -> void:
-	print("chase in")
+	#print("chase in")
 	if body.is_in_group("players") and not dying:
 		state_machine.changeState("Run")
 
 func _on_chase_zone_body_exited(body: Node3D) -> void:
-	print("chase out")
+	#print("chase out")
 	if body.is_in_group("players") and not dying:
 		state_machine.changeState("Idle")
 
 
 func _on_attack_zone_body_entered(body: Node3D) -> void:
-	print("attack in")
+	#print("attack in")
 	if body.is_in_group("players") and not dying:
 		state_machine.changeState("Attack")
 	
@@ -40,7 +40,7 @@ func _on_attack_zone_body_entered(body: Node3D) -> void:
 
 
 func _on_attack_zone_body_exited(body: Node3D) -> void:
-	print("attack out")
+	#print("attack out")
 	if body.is_in_group("players") and not dying:
 		state_machine.changeState("Run")
 

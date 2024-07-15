@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cnn88uwbw7gr5"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=3 format=3 uid="uid://cnn88uwbw7gr5"]
 
 [ext_resource type="Script" path="res://gui/inventory/inventory_data.gd" id="1_72w7q"]
 [ext_resource type="Texture2D" uid="uid://b4pp62334kdg4" path="res://resources/ui/inventory_icons/Item__40.png" id="2_0a4ko"]
@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_72w7q")
 texture = ExtResource("2_0a4ko")
-type = 11
+type = 3
+equipment_type = Array[int]([])
 item_name = "John Ring"
 item_damage = 0
 item_health = 0

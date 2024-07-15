@@ -1,0 +1,223 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfhkn88eq24q0"]
+
+[ext_resource type="Script" path="res://gui/inventory/equipment_system/equipment_slot.gd" id="1_svp44"]
+
+[node name="Equpment" type="VBoxContainer"]
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 596.0
+offset_bottom = 560.0
+theme_override_constants/separation = 140
+
+[node name="Head" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Helmet" type="PanelContainer" parent="Head"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+
+[node name="Necklace" type="PanelContainer" parent="Head"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Body" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 90
+metadata/_edit_group_ = true
+
+[node name="HandLeft" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Glove" type="PanelContainer" parent="Body/HandLeft"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 3
+
+[node name="Fingers" type="HBoxContainer" parent="Body/HandLeft"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Ring0" type="PanelContainer" parent="Body/HandLeft/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring1" type="PanelContainer" parent="Body/HandLeft/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring2" type="PanelContainer" parent="Body/HandLeft/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring3" type="PanelContainer" parent="Body/HandLeft/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring4" type="PanelContainer" parent="Body/HandLeft/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Weapon" type="PanelContainer" parent="Body/HandLeft"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="Armour" type="PanelContainer" parent="Body"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 1
+
+[node name="HandRight" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Glove" type="PanelContainer" parent="Body/HandRight"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 3
+
+[node name="Fingers" type="HBoxContainer" parent="Body/HandRight"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Ring5" type="PanelContainer" parent="Body/HandRight/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring6" type="PanelContainer" parent="Body/HandRight/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring7" type="PanelContainer" parent="Body/HandRight/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring8" type="PanelContainer" parent="Body/HandRight/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring9" type="PanelContainer" parent="Body/HandRight/Fingers"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Weapon" type="PanelContainer" parent="Body/HandRight"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 9
+
+[node name="Legs" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Pants" type="PanelContainer" parent="Legs"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Legs"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 6
+
+[node name="Anklet1" type="PanelContainer" parent="Legs/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 6
+
+[node name="Anklet2" type="PanelContainer" parent="Legs/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 6
+
+[node name="Boots" type="PanelContainer" parent="Legs"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 7

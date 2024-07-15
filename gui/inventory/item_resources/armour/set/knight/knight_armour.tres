@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://co11r7vaougp0"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=3 format=3 uid="uid://co11r7vaougp0"]
 
 [ext_resource type="Script" path="res://gui/inventory/inventory_data.gd" id="1_s5qo8"]
 [ext_resource type="Texture2D" uid="uid://co6csixghx2m6" path="res://resources/ui/inventory_icons/Item__57.png" id="2_dtprl"]
@@ -6,7 +6,8 @@
 [resource]
 script = ExtResource("1_s5qo8")
 texture = ExtResource("2_dtprl")
-type = 10
+type = 2
+equipment_type = Array[int]([1])
 item_name = "Knight Armour"
 item_damage = 0
 item_health = 0

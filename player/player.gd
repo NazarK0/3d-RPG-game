@@ -166,7 +166,7 @@ func hitOrKill(damage: int) -> void:
 		($JustHit as Timer).start()
 		Game.player_health -= damage
 		just_hit = true
-		print(Game.player_health, "health")
+		#print(Game.player_health, "health")
 		
 		if Game.player_health <= 0:
 			is_died = true

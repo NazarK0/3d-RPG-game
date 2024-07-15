@@ -3,7 +3,7 @@ class_name InventoryItem extends TextureRect
 @export var _data: InventoryData
 
 func init(data: InventoryData) -> void:
-	_data = data
+	_data = data.duplicate(true)
 	
 func makeDragPreview(at_position: Vector2) -> Control:
 	var control := Control.new()

@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		#else:
 			#
 			#
-		print(Game.fingers_equipment, " RING NUMBER")
+		#print(Game.fingers_equipment, " RING NUMBER")
 	
 func  _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	if data is InventoryItem:

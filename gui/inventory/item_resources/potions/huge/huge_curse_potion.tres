@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cxxerdvw6uje3"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=3 format=3 uid="uid://cxxerdvw6uje3"]
 
 [ext_resource type="Script" path="res://gui/inventory/inventory_data.gd" id="1_1mfkp"]
 [ext_resource type="Texture2D" uid="uid://kxy3m3ggkmnq" path="res://resources/ui/inventory_icons/potion_03d.png" id="2_dh3io"]
@@ -7,6 +7,7 @@
 script = ExtResource("1_1mfkp")
 texture = ExtResource("2_dh3io")
 type = 4
+equipment_type = Array[int]([])
 item_name = "Huge Bless Potion"
 item_damage = 0
 item_health = 70
