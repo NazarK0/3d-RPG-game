@@ -1,5 +1,7 @@
 class_name InventorySlot extends PanelContainer
 
+signal pressed
+
 @export var _type: InventoryData.TYPE
 
 func init(type: InventoryData.TYPE, cms: Vector2)-> void:
@@ -7,6 +9,7 @@ func init(type: InventoryData.TYPE, cms: Vector2)-> void:
 	custom_minimum_size = cms
 	
 func _physics_process(delta: float) -> void:
+	
 	if get_child_count() > 0:
 		var item: InventoryItem  = get_child(0)
 					
@@ -49,7 +52,6 @@ func  _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	else:
 		return false
 	
-
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if get_child_count() > 0:
 		var item := get_child(0)
@@ -69,3 +71,5 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	pass
+
+

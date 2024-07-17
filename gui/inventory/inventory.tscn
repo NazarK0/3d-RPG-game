@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6bhyuwxtbd4n"]
+[gd_scene load_steps=5 format=3 uid="uid://c6bhyuwxtbd4n"]
 
 [ext_resource type="Script" path="res://gui/inventory/inventory.gd" id="1_ix03p"]
 [ext_resource type="Texture2D" uid="uid://clpkuhi3eqkeu" path="res://gui/inventory/tab_icons/weapon.png" id="2_bbkgf"]
 [ext_resource type="Script" path="res://gui/inventory/inventory_tabs.gd" id="3_ug45r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dtq6d"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -17,7 +19,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 620.0
-offset_bottom = 608.0
+offset_bottom = 606.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -28,22 +30,55 @@ theme_override_constants/margin_top = 17
 theme_override_constants/margin_right = 17
 theme_override_constants/margin_bottom = 17
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="Details" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(340, 340)
+[node name="Bag" type="MarginContainer" parent="PanelContainer/MarginContainer/Details"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 17
+
+[node name="BagStats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/Bag"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/Bag/BagStats"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/Bag/BagStats/VBoxContainer"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/Bag/BagStats/VBoxContainer/Weight"]
+layout_mode = 2
+text = "Load:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/Bag/BagStats/VBoxContainer/Weight"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "10.56 kg
+"
+label_settings = SubResource("LabelSettings_dtq6d")
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/Bag/BagStats/VBoxContainer/Weight"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+value = 90.0
+
+[node name="ItemInfo" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details"]
+layout_mode = 2
+
+[node name="Item" type="TextureRect" parent="PanelContainer/MarginContainer/Details/ItemInfo"]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_bbkgf")
 
-[node name="DescriptionBlock" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DescriptionBlock" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo"]
 layout_mode = 2
 theme_override_constants/margin_top = 7
 theme_override_constants/margin_bottom = 17
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DescriptionBlock"]
+[node name="Description" type="RichTextLabel" parent="PanelContainer/MarginContainer/Details/ItemInfo/DescriptionBlock"]
 custom_minimum_size = Vector2(0, 125)
 layout_mode = 2
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ante turpis, mollis auctor diam nec, pretium imperdiet ipsum. Etiam bibendum, felis et egestas accumsan, nisi turpis cursus tellus, non laoreet nisl nibh a nisi. Praesent lacinia dictum leo, id sagittis nulla suscipit sit amet. Pellentesque scelerisque mattis volutpat. Phasellus at convallis magna. Nam eros mi, hendrerit id dictum sit amet, gravida non urna. Ut ultricies fringilla libero, ac sollicitudin ipsum feugiat nec. Morbi nec ipsum a lorem ornare lacinia.
@@ -56,115 +91,997 @@ Vestibulum volutpat mattis pretium. Pellentesque non pulvinar massa, non condime
 
 Nulla vehicula id dui et rhoncus. Vestibulum nec rutrum justo. Fusce auctor auctor dolor. Maecenas vel nunc porta, elementum nulla sed, semper massa. Curabitur ac scelerisque dui, at imperdiet libero. Nam vehicula velit rhoncus feugiat dapibus. Fusce non enim efficitur eros blandit gravida. Donec sodales vitae nunc eget gravida. Quisque finibus, risus id aliquet feugiat, est ligula tempor eros, sed congue purus est sed ipsum. Duis ornare dui vel nunc lobortis hendrerit. Maecenas condimentum posuere enim, quis fringilla ipsum dapibus quis. Cras sed velit mi."
 
-[node name="ItemStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ItemStats" type="PanelContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats"]
+[node name="WeaponStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats"]
 layout_mode = 2
 theme_override_constants/margin_top = 7
 theme_override_constants/margin_bottom = 17
 
-[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer"]
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer"]
 layout_mode = 2
 
-[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats"]
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 3
 
-[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps"]
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Weight"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps/Weight"]
 layout_mode = 2
 text = "Weight:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Weight"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps/Weight"]
 layout_mode = 2
 text = "10.56 kg
 "
 
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps"]
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Damage"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps/Damage"]
 layout_mode = 2
 text = "Damage:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Damage"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps/Damage"]
 layout_mode = 2
-text = "106
+text = "5
 "
 
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps"]
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Health"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps/Health"]
 layout_mode = 2
 text = "Health:"
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/ItemProps/Health"]
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/ItemProps/Health"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 value = 55.0
 
-[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats"]
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats"]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats"]
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/RequiredStats/Stregth"]
 layout_mode = 2
 text = "Strength:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/RequiredStats/Stregth"]
 layout_mode = 2
 text = "18
 "
 
-[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats"]
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats/Agility"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
 text = "Agility:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ItemStats/MarginContainer/Stats/RequiredStats/Agility"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/WeaponStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
 text = "8
 "
 
-[node name="BagStats" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ShieldStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer"]
 layout_mode = 2
 
-[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats/VBoxContainer"]
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats/VBoxContainer/Weight"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps/Weight"]
 layout_mode = 2
-text = "Bag Weight:"
+text = "Weight:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats/VBoxContainer/Weight"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps/Weight"]
 layout_mode = 2
 text = "10.56 kg
 "
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/BagStats/VBoxContainer/Weight"]
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps/Health"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
-value = 90.0
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="ArmourStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="RingStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="CureStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="KeyStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="SpellStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="PiromancyStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="IngredientStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="BookStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="NoteStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
+
+[node name="MiscStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats"]
+layout_mode = 2
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 17
+
+[node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer"]
+layout_mode = 2
+
+[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Weight"]
+layout_mode = 2
+text = "10.56 kg
+"
+
+[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps"]
+visible = false
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "Damage:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Damage"]
+layout_mode = 2
+text = "106
+"
+
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Health"]
+layout_mode = 2
+text = "Health:"
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Health"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+value = 55.0
+
+[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Stregth"]
+layout_mode = 2
+text = "18
+"
+
+[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Agility"]
+layout_mode = 2
+text = "8
+"
 
 [node name="InventoryTabs" type="TabContainer" parent="."]
 layout_mode = 0
 offset_left = 660.0
 offset_top = 5.0
-offset_right = 1142.0
-offset_bottom = 639.0
+offset_right = 1149.0
+offset_bottom = 644.0
 script = ExtResource("3_ug45r")
 
 [node name="TabWeapon" type="MarginContainer" parent="InventoryTabs"]
@@ -369,3 +1286,5 @@ vertical_scroll_mode = 3
 [node name="Grid" type="GridContainer" parent="InventoryTabs/TabMisc/ScrollContainer"]
 layout_mode = 2
 columns = 13
+
+[connection signal="tab_changed" from="InventoryTabs" to="InventoryTabs" method="_on_tab_changed"]

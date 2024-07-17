@@ -34,6 +34,9 @@ extends TabContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	init_tabs()
+
+func init_tabs() -> void:
 	for idx in range(Game.INVENTORY_TABS.size()):
 		set_tab_title(idx, "")
 		set_tab_icon(idx, TAB_ICONS[idx])
@@ -47,3 +50,5 @@ func _ready() -> void:
 			grid.add_child(slot)
 
 
+func _on_tab_changed(_tab: int) -> void:
+	$"../PanelContainer/MarginContainer/Details/ItemInfo".visible = false
