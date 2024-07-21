@@ -22,7 +22,6 @@ func makeDragPreview(at_position: Vector2) -> Control:
 	return control
 
 func _ready() -> void:
-	print(_item_info_panel_path, 'RINFO')
 	if _data:
 		stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 		texture_normal = _data.texture
@@ -55,7 +54,6 @@ func _pressed() -> void:
 						_data.item_defence,
 						_data.item_health,
 					]
-	print(info)
 	
 	var item_info_panel = get_node(_item_info_panel_path)
 	
@@ -66,31 +64,62 @@ func _pressed() -> void:
 	item_info_panel.find_child("Description").text = _data.description
 	
 	item_info_panel.find_child("WeaponStats").visible = false
-	item_info_panel.find_child("ShieldStats").visible = true
-	item_info_panel.find_child("ArmourStats").visible = true
-	item_info_panel.find_child("RingStats").visible = true
-	item_info_panel.find_child("CureStats").visible = true
-	item_info_panel.find_child("KeyStats").visible = true
-	item_info_panel.find_child("SpellStats").visible = true
-	item_info_panel.find_child("PiromancyStats").visible = true
-	item_info_panel.find_child("IngredientStats").visible = true
-	item_info_panel.find_child("BookStats").visible = true
-	item_info_panel.find_child("NoteStats").visible = true
-	item_info_panel.find_child("MiscStats").visible = true
+	item_info_panel.find_child("ShieldStats").visible = false
+	item_info_panel.find_child("ArmourStats").visible = false
+	item_info_panel.find_child("RingStats").visible = false
+	item_info_panel.find_child("CureStats").visible = false
+	item_info_panel.find_child("KeyStats").visible = false
+	item_info_panel.find_child("SpellStats").visible = false
+	item_info_panel.find_child("PiromancyStats").visible = false
+	item_info_panel.find_child("IngredientStats").visible = false
+	item_info_panel.find_child("BookStats").visible = false
+	item_info_panel.find_child("NoteStats").visible = false
+	item_info_panel.find_child("MiscStats").visible = false
 
 	match _data.type:
 		InventoryData.TYPE.WEAPON:
 			var weapon = item_info_panel.find_child("WeaponStats")
-			weapon.visible = true
+			
+			weapon.visible = true			
+			weapon.find_child("Weight").find_child("value").text = str(_data.weight)
 			weapon.find_child("Damage").find_child("value").text = str(_data.item_damage)
+			weapon.find_child("Health").find_child("value").value = _data.item_health
+			
+			displayRequiredSkills(weapon, _data.required_skills, _data.required_skill_values)
 		InventoryData.TYPE.SHIELD:
-			item_info_panel.find_child("ShieldStats").visible = true
+			var shield = item_info_panel.find_child("ShieldStats")
+			
+			shield.visible = true
+			shield.find_child("Weight").find_child("value").text = str(_data.weight)
+			shield.find_child("Damage").find_child("value").text = str(_data.item_damage)
+			shield.find_child("Defence").find_child("value").text = str(_data.item_defence)
+			shield.find_child("Health").find_child("value").value = _data.item_health
+			
+			displayRequiredSkills(shield, _data.required_skills, _data.required_skill_values)
 		InventoryData.TYPE.ARMOUR:
-			item_info_panel.find_child("ArmourStats").visible = true
+			var armour = item_info_panel.find_child("ArmourStats")
+			
+			armour.visible = true
+			armour.find_child("Weight").find_child("value").text = str(_data.weight)
+			armour.find_child("Damage").find_child("value").text = str(_data.item_damage)
+			armour.find_child("Defence").find_child("value").text = str(_data.item_defence)
+			armour.find_child("Health").find_child("value").value = _data.item_health
+			
+			displayRequiredSkills(armour, _data.required_skills, _data.required_skill_values)
 		InventoryData.TYPE.RING:
-			item_info_panel.find_child("RingStats").visible = true
+			var ring = item_info_panel.find_child("RingStats")
+			
+			ring.visible = true
+			ring.find_child("Weight").find_child("value").text = str(_data.weight)
+			ring.find_child("Damage").find_child("value").text = str(_data.item_damage)
+			ring.find_child("Defence").find_child("value").text = str(_data.item_defence)
+			ring.find_child("Health").find_child("value").value = _data.item_health
+			
+			displayRequiredSkills(ring, _data.required_skills, _data.required_skill_values)
 		InventoryData.TYPE.CURE:
-			item_info_panel.find_child("CureStats").visible = true
+			var cure = item_info_panel.find_child("CureStats")
+			
+			cure.visible = true
 		InventoryData.TYPE.KEY:
 			item_info_panel.find_child("KeyStats").visible = true
 		InventoryData.TYPE.SPELL:
@@ -106,6 +135,24 @@ func _pressed() -> void:
 		InventoryData.TYPE.MISC:
 			item_info_panel.find_child("MiscStats").visible = true
 		
-		
-			
-	#item_info_panel.find_child("Description").text = _data.description
+
+func displayRequiredSkills(base: Node, skills: Array[InventoryData.SKILLS], values: Array[int]) -> void:
+	var strength = base.find_child("Strength")
+	var agility = base.find_child("Agility")
+	var holiness = base.find_child("Holiness")
+	
+	strength.visible = false
+	agility.visible = false
+	holiness.visible = false
+	
+	for rs_idx in range(skills.size()):
+		match skills[rs_idx]:
+			InventoryData.SKILLS.STRENGTH:
+				strength.find_child("value").text = str(values[rs_idx])
+				strength.visible = true
+			InventoryData.SKILLS.AGILITY:
+				agility.find_child("value").text = str(values[rs_idx])
+				agility.visible = true
+			InventoryData.SKILLS.HOLINESS:
+				holiness.find_child("value").text = str(values[rs_idx])
+				holiness.visible = true
