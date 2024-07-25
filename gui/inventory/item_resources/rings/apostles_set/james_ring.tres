@@ -17,4 +17,5 @@ required_skills = Array[int]([2])
 required_skill_values = Array[int]([38])
 stackable = false
 count = 1
+created_at = ""
 description = "This is a ring of James apostle..."

@@ -1,102 +1,60 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfhkn88eq24q0"]
+[gd_scene load_steps=4 format=3 uid="uid://dfhkn88eq24q0"]
 
-[ext_resource type="Script" path="res://gui/inventory/equipment_system/equipment_slot.gd" id="1_svp44"]
+[ext_resource type="Script" path="res://gui/equipment/equipment_slot.gd" id="1_svp44"]
+[ext_resource type="Script" path="res://gui/equipment/equpment.gd" id="1_uyoas"]
+[ext_resource type="Texture2D" uid="uid://dgjb1j8lptg2x" path="res://player-mock.jpg" id="3_3vw0v"]
 
-[node name="Equpment" type="VBoxContainer"]
-offset_left = 16.0
-offset_top = 72.0
-offset_right = 596.0
-offset_bottom = 560.0
-theme_override_constants/separation = 140
+[node name="Equipment" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uyoas")
 
-[node name="Head" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-alignment = 1
 
-[node name="Helmet" type="PanelContainer" parent="Head"]
-custom_minimum_size = Vector2(32, 32)
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
-[node name="Necklace" type="PanelContainer" parent="Head"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Groups" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 4
+theme_override_constants/separation = 14
 
-[node name="Body" type="HBoxContainer" parent="."]
+[node name="EqupmentSlots" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 90
-metadata/_edit_group_ = true
+theme_override_constants/separation = 12
 
-[node name="HandLeft" type="VBoxContainer" parent="Body"]
+[node name="RightHand" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
 layout_mode = 2
-theme_override_constants/separation = 6
 
-[node name="Glove" type="PanelContainer" parent="Body/HandLeft"]
-custom_minimum_size = Vector2(32, 32)
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 3
+text = "Right Hand"
 
-[node name="Fingers" type="HBoxContainer" parent="Body/HandLeft"]
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 6
-alignment = 1
 
-[node name="Ring0" type="PanelContainer" parent="Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring1" type="PanelContainer" parent="Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring2" type="PanelContainer" parent="Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring3" type="PanelContainer" parent="Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring4" type="PanelContainer" parent="Body/HandLeft/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Weapon" type="PanelContainer" parent="Body/HandLeft"]
+[node name="WeaponR1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -104,7 +62,156 @@ size_flags_vertical = 4
 script = ExtResource("1_svp44")
 _type = 8
 
-[node name="Armour" type="PanelContainer" parent="Body"]
+[node name="WeaponR2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="WeaponR3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="WeaponR4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="WeaponR5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="LeftHand" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand"]
+layout_mode = 2
+text = "Left Hand"
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand"]
+layout_mode = 2
+
+[node name="WeaponL1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="WeaponL2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="WeaponL3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="WeaponL4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="WeaponL5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="Arrows" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows"]
+layout_mode = 2
+text = "Arrows"
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows"]
+layout_mode = 2
+
+[node name="Arrow1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="Arrow2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="Arrow3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="Arrow4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="Arrow5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 8
+
+[node name="BodyDefence" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence"]
+layout_mode = 2
+text = "Body"
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence"]
+layout_mode = 2
+
+[node name="Helmet" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+
+[node name="Armour" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -112,11 +219,7 @@ size_flags_vertical = 4
 script = ExtResource("1_svp44")
 _type = 1
 
-[node name="HandRight" type="VBoxContainer" parent="Body"]
-layout_mode = 2
-theme_override_constants/separation = 6
-
-[node name="Glove" type="PanelContainer" parent="Body/HandRight"]
+[node name="Glove" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -124,67 +227,7 @@ size_flags_vertical = 4
 script = ExtResource("1_svp44")
 _type = 3
 
-[node name="Fingers" type="HBoxContainer" parent="Body/HandRight"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 6
-alignment = 1
-
-[node name="Ring5" type="PanelContainer" parent="Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring6" type="PanelContainer" parent="Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring7" type="PanelContainer" parent="Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring8" type="PanelContainer" parent="Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring9" type="PanelContainer" parent="Body/HandRight/Fingers"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Weapon" type="PanelContainer" parent="Body/HandRight"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 9
-
-[node name="Legs" type="VBoxContainer" parent="."]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 6
-alignment = 1
-
-[node name="Pants" type="PanelContainer" parent="Legs"]
+[node name="Pants" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -192,32 +235,317 @@ size_flags_vertical = 4
 script = ExtResource("1_svp44")
 _type = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Legs"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 6
-
-[node name="Anklet1" type="PanelContainer" parent="Legs/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 6
-
-[node name="Anklet2" type="PanelContainer" parent="Legs/HBoxContainer"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 6
-
-[node name="Boots" type="PanelContainer" parent="Legs"]
+[node name="Boots" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_svp44")
 _type = 7
+
+[node name="LeftHandRings" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings"]
+layout_mode = 2
+text = "Left Hand Rings"
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings"]
+layout_mode = 2
+
+[node name="Ring5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring6" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring7" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring8" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring9" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="RightHandRings" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings"]
+layout_mode = 2
+text = "Right Hand Rings"
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings"]
+layout_mode = 2
+
+[node name="Ring0" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="Ring4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="KnickKnackery" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery"]
+layout_mode = 2
+text = "Knick-Knackery"
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery"]
+layout_mode = 2
+
+[node name="Necklace" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="BraceletR" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="BraceletL" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="AnkletR" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 6
+
+[node name="AnkletL" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 6
+
+[node name="QuickAccess" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
+layout_mode = 2
+text = "Quick Access"
+
+[node name="SlotsL1" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
+layout_mode = 2
+
+[node name="Item1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Item2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Item3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Item4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Item5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="SlotsL2" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
+layout_mode = 2
+
+[node name="Item1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Item2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Item3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Item4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="Item5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_svp44")
+_type = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/Groups"]
+layout_mode = 2
+texture = ExtResource("3_3vw0v")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Stats" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Health" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Health"]
+layout_mode = 2
+text = "Health"
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Health"]
+layout_mode = 2
+text = "180"
+
+[node name="Attack" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Attack"]
+layout_mode = 2
+text = "Atack"
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Attack"]
+layout_mode = 2
+text = "180"
+
+[node name="Defence" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Defence"]
+layout_mode = 2
+text = "Defence"
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Defence"]
+layout_mode = 2
+text = "180"
+
+[node name="Agility" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Agility"]
+layout_mode = 2
+text = "Agility"
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Agility"]
+layout_mode = 2
+text = "180"
+
+[node name="Holiness" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Holiness"]
+layout_mode = 2
+text = "Holiness"
+
+[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Holiness"]
+layout_mode = 2
+text = "180"
