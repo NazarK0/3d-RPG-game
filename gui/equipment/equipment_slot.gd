@@ -3,10 +3,11 @@ class_name EquipmentSlot extends TextureButton
 @export var _type: EquipmentData.TYPE
 
 func _physics_process(delta: float) -> void:
-	if get_child_count() > 0:
-		var item: EquipmentItem  = get_child(0)
-					
-		save_to_ram(item)
+	pass
+	#if get_child_count() > 0:
+		#var item: EquipmentItem  = get_child(0)
+					#
+		#save_to_ram(item)
 
 #func _gui_input(event: InputEvent) -> void:
 	#pass
@@ -23,6 +24,7 @@ func save_to_ram(item: EquipmentItem) -> void:
 	#Game.anklet_equipment = item._data if (_type == InventoryData.TYPE.ANKLE) else null
 	#Game.feet_equipment = item._data if (_type == InventoryData.TYPE.FEET) else null
 func _pressed() -> void:
+	
 	match _type:
 		EquipmentData.TYPE.HEAD:
 			print('HEAD')

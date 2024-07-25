@@ -1,13 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfhkn88eq24q0"]
+[gd_scene load_steps=20 format=3 uid="uid://dfhkn88eq24q0"]
 
 [ext_resource type="Script" path="res://gui/equipment/equipment_slot.gd" id="1_svp44"]
 [ext_resource type="Script" path="res://gui/equipment/equpment.gd" id="1_uyoas"]
 [ext_resource type="Texture2D" uid="uid://xpmsqohdtcbb" path="res://gui/equipment/slot_background/weapon.png" id="2_gkx45"]
 [ext_resource type="Texture2D" uid="uid://dgjb1j8lptg2x" path="res://player-mock.jpg" id="3_3vw0v"]
 [ext_resource type="Texture2D" uid="uid://pliod7wr7ku1" path="res://gui/equipment/slot_background/armour.png" id="3_l6f4r"]
+[ext_resource type="Script" path="res://gui/equipment/PopupPanel.gd" id="4_14h1i"]
 [ext_resource type="Texture2D" uid="uid://c133wa654j68l" path="res://gui/equipment/slot_background/arrow.png" id="4_ge6xi"]
 [ext_resource type="Texture2D" uid="uid://dfrq5w77s8wkx" path="res://gui/equipment/slot_background/head.png" id="5_e6q4d"]
+[ext_resource type="Script" path="res://gui/inventory/inventory_slot.gd" id="5_wo0mp"]
+[ext_resource type="Script" path="res://gui/equipment/ConfirmationDialog.gd" id="6_dabdq"]
 [ext_resource type="Texture2D" uid="uid://btg7wknwup6b" path="res://gui/equipment/slot_background/glove.png" id="7_jbwv7"]
+[ext_resource type="Script" path="res://gui/equipment/AcceptDialog.gd" id="7_xfwlp"]
+[ext_resource type="PackedScene" uid="uid://d357n4mqfvg7v" path="res://gui/equipment/equip_dialog_item/equip_dialog_item.tscn" id="8_5aj5t"]
 [ext_resource type="Texture2D" uid="uid://b1hbrh2q6d7s5" path="res://gui/equipment/slot_background/boots.png" id="8_xxbm1"]
 [ext_resource type="Texture2D" uid="uid://bfpf1l3ehhebg" path="res://gui/equipment/slot_background/ring.png" id="9_2f5ta"]
 [ext_resource type="Texture2D" uid="uid://f734h8hgf6fv" path="res://gui/equipment/slot_background/necklace.png" id="10_uxlfs"]
@@ -78,6 +83,22 @@ stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 9
 
+[node name="PopupPanel" type="PopupPanel" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR1"]
+mode = 3
+initial_position = 2
+borderless = false
+always_on_top = true
+script = ExtResource("4_14h1i")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR1/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR1/PopupPanel/ScrollContainer"]
+layout_mode = 2
+
 [node name="WeaponR2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
 modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
@@ -89,6 +110,240 @@ stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 9
 
+[node name="SelectDialog" type="ConfirmationDialog" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2"]
+unresizable = true
+borderless = true
+always_on_top = true
+popup_window = true
+keep_title_visible = false
+ok_button_text = "Confirm"
+script = ExtResource("6_dabdq")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 59.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer10"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer11"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer12"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer13"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer14" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer14"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer14"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer15" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer15"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer15"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer16" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer16"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer16"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer17" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer17"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+text = "title"
+
+[node name="HBoxContainer18" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventorySlot" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer18"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("5_wo0mp")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog/ScrollContainer/VBoxContainer/HBoxContainer18"]
+layout_mode = 2
+text = "title"
+
 [node name="WeaponR3" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
 modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
@@ -99,6 +354,96 @@ texture_normal = ExtResource("2_gkx45")
 stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 9
+
+[node name="AcceptDialog" type="AcceptDialog" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3"]
+unresizable = true
+borderless = true
+always_on_top = true
+popup_window = true
+keep_title_visible = false
+script = ExtResource("7_xfwlp")
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2"]
+layout_mode = 2
+
+[node name="Button" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button2" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button3" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button4" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button5" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button6" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button7" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button8" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button9" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button10" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button11" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button12" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button13" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button14" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button15" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button16" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button17" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
+
+[node name="Button18" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog/ScrollContainer2/VBoxContainer" instance=ExtResource("8_5aj5t")]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 2
 
 [node name="WeaponR4" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
 modulate = Color(1, 1, 1, 0.329412)
@@ -701,3 +1046,7 @@ text = "Holiness"
 [node name="Value" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Holiness"]
 layout_mode = 2
 text = "180"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR1" to="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR1/PopupPanel" method="_on_weapon_r_1_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2" to="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR2/SelectDialog" method="_on_weapon_r_2_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3" to="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots/WeaponR3/AcceptDialog" method="_on_weapon_r_3_pressed"]

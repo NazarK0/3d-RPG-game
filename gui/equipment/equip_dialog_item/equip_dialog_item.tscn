@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=3 uid="uid://d357n4mqfvg7v"]
+
+[ext_resource type="Script" path="res://gui/inventory/inventory_slot.gd" id="1_c7gux"]
+[ext_resource type="Texture2D" uid="uid://clsssff1uwmpg" path="res://gui/equipment/equip_dialog_item/icons/attack.png" id="2_ti8yc"]
+[ext_resource type="Texture2D" uid="uid://d3kndtacsaqbx" path="res://gui/equipment/equip_dialog_item/icons/defence.png" id="3_8syvc"]
+[ext_resource type="Texture2D" uid="uid://cb0ccfy1ctg5h" path="res://gui/equipment/equip_dialog_item/icons/health.png" id="4_qrjq4"]
+[ext_resource type="Texture2D" uid="uid://dxmp5s1gnv20c" path="res://gui/equipment/equip_dialog_item/icons/holiness.png" id="5_g8qg6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr5sp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1u6lm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1voh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5qxfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7es4j"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(400, 36)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vr5sp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1u6lm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d1voh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5qxfq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7es4j")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="EquipDialogItem" type="HBoxContainer" parent="Button/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="InventorySlot" type="PanelContainer" parent="Button/MarginContainer/EquipDialogItem"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("1_c7gux")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button/MarginContainer/EquipDialogItem"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Attack" type="HBoxContainer" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer/Attack"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ti8yc")
+stretch_mode = 2
+
+[node name="Value" type="Label" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer/Attack"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "12"
+
+[node name="Defence" type="HBoxContainer" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer/Defence"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_8syvc")
+stretch_mode = 2
+
+[node name="Value" type="Label" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer/Defence"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "7"
+
+[node name="Health" type="HBoxContainer" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer/Health"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_qrjq4")
+stretch_mode = 2
+
+[node name="Value" type="ProgressBar" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer/Health"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+value = 23.0
+
+[node name="Holiness" type="HBoxContainer" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer/Holiness"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_g8qg6")
+stretch_mode = 2
+
+[node name="Value" type="Label" parent="Button/MarginContainer/EquipDialogItem/HBoxContainer/Holiness"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "2
+"
+
+[node name="title" type="Label" parent="Button/MarginContainer/EquipDialogItem"]
+layout_mode = 2
+text = "title"

@@ -1,7 +1,5 @@
 class_name InventorySlot extends PanelContainer
 
-signal pressed
-
 @export var _type: InventoryData.TYPE
 
 func init(type: InventoryData.TYPE, cms: Vector2)-> void:
