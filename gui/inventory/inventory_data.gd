@@ -36,5 +36,6 @@ enum SKILLS {
 @export var required_skill_values: Array[int]
 @export var stackable: bool
 @export var count: int
+@export var created_at: String # Only for Notes
 @export_multiline var description: String
 

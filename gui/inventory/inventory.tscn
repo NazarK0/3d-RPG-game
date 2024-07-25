@@ -247,7 +247,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Health:"
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps/Health"]
+[node name="value" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/ItemProps/Health"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 value = 55.0
@@ -280,6 +280,18 @@ layout_mode = 2
 text = "8
 "
 
+[node name="Holiness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "Holiness:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ShieldStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "0
+"
+
 [node name="ArmourStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
 visible = false
 layout_mode = 2
@@ -310,7 +322,6 @@ text = "10.56 kg
 "
 
 [node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps"]
-visible = false
 layout_mode = 2
 
 [node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Damage"]
@@ -323,7 +334,6 @@ text = "106
 "
 
 [node name="Defence" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps"]
-visible = false
 layout_mode = 2
 
 [node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Defence"]
@@ -342,7 +352,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Health:"
 
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Health"]
+[node name="value" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/ItemProps/Health"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 value = 55.0
@@ -351,14 +361,14 @@ value = 55.0
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats"]
+[node name="Strength" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "Strength:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "18
 "
@@ -373,6 +383,18 @@ text = "Agility:"
 [node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
 text = "8
+"
+
+[node name="Holiness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "Holiness:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/ArmourStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "0
 "
 
 [node name="RingStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
@@ -404,56 +426,18 @@ layout_mode = 2
 text = "10.56 kg
 "
 
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Defence" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Defence"]
-layout_mode = 2
-text = "Defence:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Defence"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
 [node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats"]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats"]
+[node name="Strength" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "Strength:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "18
 "
@@ -468,6 +452,18 @@ text = "Agility:"
 [node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
 text = "8
+"
+
+[node name="Holiness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "Holiness:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/RingStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "0
 "
 
 [node name="CureStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
@@ -499,43 +495,18 @@ layout_mode = 2
 text = "10.56 kg
 "
 
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
 [node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats"]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats"]
+[node name="Strength" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "Strength:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "18
 "
@@ -550,6 +521,18 @@ text = "Agility:"
 [node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
 text = "8
+"
+
+[node name="Holiness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "Holiness:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/CureStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "0
 "
 
 [node name="KeyStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
@@ -581,59 +564,6 @@ layout_mode = 2
 text = "10.56 kg
 "
 
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
-[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats"]
-layout_mode = 2
-theme_override_constants/separation = 3
-
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats/Stregth"]
-layout_mode = 2
-text = "Strength:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats/Stregth"]
-layout_mode = 2
-text = "18
-"
-
-[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats/Agility"]
-layout_mode = 2
-text = "Agility:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/KeyStats/MarginContainer/Stats/RequiredStats/Agility"]
-layout_mode = 2
-text = "8
-"
-
 [node name="SpellStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
 visible = false
 layout_mode = 2
@@ -646,59 +576,18 @@ theme_override_constants/margin_bottom = 17
 [node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer"]
 layout_mode = 2
 
-[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 3
-
-[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Weight"]
-layout_mode = 2
-text = "Weight:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Weight"]
-layout_mode = 2
-text = "10.56 kg
-"
-
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
 [node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats"]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats"]
+[node name="Strength" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "Strength:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "18
 "
@@ -715,6 +604,18 @@ layout_mode = 2
 text = "8
 "
 
+[node name="Holiness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "Holiness:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/SpellStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "0
+"
+
 [node name="PiromancyStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
 visible = false
 layout_mode = 2
@@ -727,60 +628,18 @@ theme_override_constants/margin_bottom = 17
 [node name="Stats" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer"]
 layout_mode = 2
 
-[node name="ItemProps" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 3
-
-[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Weight"]
-layout_mode = 2
-text = "Weight:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Weight"]
-layout_mode = 2
-text = "10.56 kg
-"
-
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
 [node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats"]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats"]
+[node name="Strength" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "Strength:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "18
 "
@@ -795,6 +654,18 @@ text = "Agility:"
 [node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
 text = "8
+"
+
+[node name="Holiness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "Holiness:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/PiromancyStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "0
 "
 
 [node name="IngredientStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
@@ -826,59 +697,6 @@ layout_mode = 2
 text = "10.56 kg
 "
 
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
-[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats"]
-layout_mode = 2
-theme_override_constants/separation = 3
-
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats/Stregth"]
-layout_mode = 2
-text = "Strength:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats/Stregth"]
-layout_mode = 2
-text = "18
-"
-
-[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats/Agility"]
-layout_mode = 2
-text = "Agility:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/IngredientStats/MarginContainer/Stats/RequiredStats/Agility"]
-layout_mode = 2
-text = "8
-"
-
 [node name="BookStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
 visible = false
 layout_mode = 2
@@ -908,43 +726,18 @@ layout_mode = 2
 text = "10.56 kg
 "
 
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
 [node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats"]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats"]
+[node name="Strength" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "Strength:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "18
 "
@@ -959,6 +752,18 @@ text = "Agility:"
 [node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
 text = "8
+"
+
+[node name="Holiness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "Holiness:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/BookStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "0
 "
 
 [node name="NoteStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
@@ -978,69 +783,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 3
 
-[node name="Weight" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps"]
+[node name="CreatedAt" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Weight"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/CreatedAt"]
 layout_mode = 2
-text = "Weight:"
+text = "Created at:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Weight"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/CreatedAt"]
 layout_mode = 2
 text = "10.56 kg
-"
-
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
-[node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats"]
-layout_mode = 2
-theme_override_constants/separation = 3
-
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats/Stregth"]
-layout_mode = 2
-text = "Strength:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats/Stregth"]
-layout_mode = 2
-text = "18
-"
-
-[node name="Agility" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats/Agility"]
-layout_mode = 2
-text = "Agility:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/NoteStats/MarginContainer/Stats/RequiredStats/Agility"]
-layout_mode = 2
-text = "8
 "
 
 [node name="MiscStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats"]
@@ -1072,43 +824,18 @@ layout_mode = 2
 text = "10.56 kg
 "
 
-[node name="Damage" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps"]
-visible = false
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "Damage:"
-
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Damage"]
-layout_mode = 2
-text = "106
-"
-
-[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps"]
-layout_mode = 2
-
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Health"]
-layout_mode = 2
-text = "Health:"
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/ItemProps/Health"]
-custom_minimum_size = Vector2(130, 0)
-layout_mode = 2
-value = 55.0
-
 [node name="RequiredStats" type="VBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats"]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="Stregth" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats"]
+[node name="Strength" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats"]
 layout_mode = 2
 
-[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "Strength:"
 
-[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Stregth"]
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Strength"]
 layout_mode = 2
 text = "18
 "
@@ -1123,6 +850,18 @@ text = "Agility:"
 [node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Agility"]
 layout_mode = 2
 text = "8
+"
+
+[node name="Holiness" type="HBoxContainer" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "Holiness:"
+
+[node name="value" type="Label" parent="PanelContainer/MarginContainer/Details/ItemInfo/ItemStats/MiscStats/MarginContainer/Stats/RequiredStats/Holiness"]
+layout_mode = 2
+text = "0
 "
 
 [node name="InventoryTabs" type="TabContainer" parent="."]
