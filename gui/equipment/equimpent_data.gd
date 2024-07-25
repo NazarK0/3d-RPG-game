@@ -11,6 +11,9 @@ enum TYPE {
 	FEET, 
 	WEAPON_LH,
 	WEAPON_RH,
+	ARROW,
+	WRIST,
+	QUICK_ACCESS,
 }
 
 @export var data: InventoryData

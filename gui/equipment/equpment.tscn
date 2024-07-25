@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfhkn88eq24q0"]
+[gd_scene load_steps=15 format=3 uid="uid://dfhkn88eq24q0"]
 
 [ext_resource type="Script" path="res://gui/equipment/equipment_slot.gd" id="1_svp44"]
 [ext_resource type="Script" path="res://gui/equipment/equpment.gd" id="1_uyoas"]
+[ext_resource type="Texture2D" uid="uid://xpmsqohdtcbb" path="res://gui/equipment/slot_background/weapon.png" id="2_gkx45"]
 [ext_resource type="Texture2D" uid="uid://dgjb1j8lptg2x" path="res://player-mock.jpg" id="3_3vw0v"]
+[ext_resource type="Texture2D" uid="uid://pliod7wr7ku1" path="res://gui/equipment/slot_background/armour.png" id="3_l6f4r"]
+[ext_resource type="Texture2D" uid="uid://c133wa654j68l" path="res://gui/equipment/slot_background/arrow.png" id="4_ge6xi"]
+[ext_resource type="Texture2D" uid="uid://dfrq5w77s8wkx" path="res://gui/equipment/slot_background/head.png" id="5_e6q4d"]
+[ext_resource type="Texture2D" uid="uid://btg7wknwup6b" path="res://gui/equipment/slot_background/glove.png" id="7_jbwv7"]
+[ext_resource type="Texture2D" uid="uid://b1hbrh2q6d7s5" path="res://gui/equipment/slot_background/boots.png" id="8_xxbm1"]
+[ext_resource type="Texture2D" uid="uid://bfpf1l3ehhebg" path="res://gui/equipment/slot_background/ring.png" id="9_2f5ta"]
+[ext_resource type="Texture2D" uid="uid://f734h8hgf6fv" path="res://gui/equipment/slot_background/necklace.png" id="10_uxlfs"]
+[ext_resource type="Texture2D" uid="uid://31jr44458n4m" path="res://gui/equipment/slot_background/bracelet.png" id="11_ie8u8"]
+[ext_resource type="Texture2D" uid="uid://ca5ihbdvta5xt" path="res://gui/equipment/slot_background/anklet.png" id="12_74cfq"]
+[ext_resource type="Texture2D" uid="uid://bygq2mew2jtv0" path="res://gui/equipment/slot_background/qa.png" id="13_khs5m"]
 
 [node name="Equipment" type="Control"]
 layout_mode = 3
@@ -28,206 +39,268 @@ theme_override_constants/margin_bottom = 3
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Groups" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+[node name="Groups" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="EqupmentSlots" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups"]
+[node name="EqupmentSlots" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="RightHand" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+[node name="RightHand" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand"]
 layout_mode = 2
 text = "Right Hand"
 
-[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand"]
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand"]
 layout_mode = 2
+theme_override_constants/separation = 11
 
-[node name="WeaponR1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+[node name="WeaponR1" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 9
 
-[node name="WeaponR2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+[node name="WeaponR2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 9
 
-[node name="WeaponR3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+[node name="WeaponR3" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 9
 
-[node name="WeaponR4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+[node name="WeaponR4" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 9
 
-[node name="WeaponR5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+[node name="WeaponR5" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 9
 
-[node name="LeftHand" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+[node name="LeftHand" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHand"]
 layout_mode = 2
 text = "Left Hand"
 
-[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand"]
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHand"]
 layout_mode = 2
+theme_override_constants/separation = 11
 
-[node name="WeaponL1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+[node name="WeaponL1" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 8
 
-[node name="WeaponL2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+[node name="WeaponL2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 8
 
-[node name="WeaponL3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+[node name="WeaponL3" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 8
 
-[node name="WeaponL4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+[node name="WeaponL4" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 8
 
-[node name="WeaponL5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+[node name="WeaponL5" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHand/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_gkx45")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 8
 
-[node name="Arrows" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+[node name="Arrows" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/Arrows"]
 layout_mode = 2
 text = "Arrows"
 
-[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows"]
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/Arrows"]
 layout_mode = 2
+theme_override_constants/separation = 11
 
-[node name="Arrow1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+[node name="Arrow1" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("4_ge6xi")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 10
 
-[node name="Arrow2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+[node name="Arrow2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("4_ge6xi")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 10
 
-[node name="Arrow3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+[node name="Arrow3" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("4_ge6xi")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 10
 
-[node name="Arrow4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+[node name="Arrow4" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("4_ge6xi")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 10
 
-[node name="Arrow5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+[node name="Arrow5" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/Arrows/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("4_ge6xi")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 8
+_type = 10
 
-[node name="BodyDefence" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+[node name="BodyDefence" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence"]
 layout_mode = 2
 text = "Body"
 
-[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence"]
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence"]
 layout_mode = 2
+theme_override_constants/separation = 11
 
-[node name="Helmet" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+[node name="Helmet" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("5_e6q4d")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 
-[node name="Armour" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+[node name="Armour" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("3_l6f4r")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 1
 
-[node name="Glove" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+[node name="Glove" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("7_jbwv7")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 3
 
-[node name="Pants" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+[node name="Pants" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -235,317 +308,396 @@ size_flags_vertical = 4
 script = ExtResource("1_svp44")
 _type = 5
 
-[node name="Boots" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+[node name="Boots" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/BodyDefence/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("8_xxbm1")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 7
 
-[node name="LeftHandRings" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+[node name="RightHandRings" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings"]
-layout_mode = 2
-text = "Left Hand Rings"
-
-[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings"]
-layout_mode = 2
-
-[node name="Ring5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring6" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring7" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring8" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="Ring9" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_svp44")
-_type = 2
-
-[node name="RightHandRings" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings"]
 layout_mode = 2
 text = "Right Hand Rings"
 
-[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings"]
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings"]
 layout_mode = 2
+theme_override_constants/separation = 11
 
-[node name="Ring0" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+[node name="RingR1" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 2
 
-[node name="Ring1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+[node name="RingR2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 2
 
-[node name="Ring2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+[node name="RingR3" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 2
 
-[node name="Ring3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+[node name="RingR4" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 2
 
-[node name="Ring4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+[node name="RingR5" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/RightHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 2
 
-[node name="KnickKnackery" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+[node name="LeftHandRings" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings"]
+layout_mode = 2
+text = "Left Hand Rings"
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="RingL1" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="RingL2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="RingL3" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="RingL4" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="RingL5" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/LeftHandRings/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("9_2f5ta")
+stretch_mode = 0
+script = ExtResource("1_svp44")
+_type = 2
+
+[node name="KnickKnackery" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery"]
 layout_mode = 2
 text = "Knick-Knackery"
 
-[node name="Slots" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery"]
+[node name="Slots" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery"]
 layout_mode = 2
+theme_override_constants/separation = 11
 
-[node name="Necklace" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+[node name="Necklace" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("10_uxlfs")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 4
 
-[node name="BraceletR" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+[node name="BraceletR" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("11_ie8u8")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 11
 
-[node name="BraceletL" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+[node name="BraceletL" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("11_ie8u8")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 11
 
-[node name="AnkletR" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+[node name="AnkletR" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("12_74cfq")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 6
 
-[node name="AnkletL" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+[node name="AnkletL" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/KnickKnackery/Slots"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("12_74cfq")
+stretch_mode = 0
 script = ExtResource("1_svp44")
 _type = 6
 
-[node name="QuickAccess" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots"]
+[node name="QuickAccess" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
 layout_mode = 2
 text = "Quick Access"
 
-[node name="SlotsL1" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
+[node name="SlotsL1" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
 layout_mode = 2
+theme_override_constants/separation = 11
 
-[node name="Item1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+[node name="Item1" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="Item2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+[node name="Item2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="Item3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+[node name="Item3" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="Item4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+[node name="Item4" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="Item5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+[node name="Item5" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL1"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="SlotsL2" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
+[node name="SlotsL2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess"]
 layout_mode = 2
+theme_override_constants/separation = 11
 
-[node name="Item1" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+[node name="Item1" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="Item2" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+[node name="Item2" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="Item3" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+[node name="Item3" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="Item4" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+[node name="Item4" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="Item5" type="PanelContainer" parent="MarginContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+[node name="Item5" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer/Groups/EqupmentSlots/QuickAccess/SlotsL2"]
+modulate = Color(1, 1, 1, 0.329412)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("13_khs5m")
+stretch_mode = 0
 script = ExtResource("1_svp44")
-_type = 4
+_type = 12
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/Groups"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/Groups"]
 layout_mode = 2
 texture = ExtResource("3_3vw0v")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Stats" type="VBoxContainer" parent="MarginContainer/MarginContainer/Groups"]
+[node name="Stats" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 12
 
-[node name="Health" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+[node name="Health" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Health"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Health"]
 layout_mode = 2
 text = "Health"
 
-[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Health"]
+[node name="Value" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Health"]
 layout_mode = 2
 text = "180"
 
-[node name="Attack" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+[node name="Attack" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Attack"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Attack"]
 layout_mode = 2
 text = "Atack"
 
-[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Attack"]
+[node name="Value" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Attack"]
 layout_mode = 2
 text = "180"
 
-[node name="Defence" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+[node name="Defence" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Defence"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Defence"]
 layout_mode = 2
 text = "Defence"
 
-[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Defence"]
+[node name="Value" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Defence"]
 layout_mode = 2
 text = "180"
 
-[node name="Agility" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+[node name="Agility" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Agility"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Agility"]
 layout_mode = 2
 text = "Agility"
 
-[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Agility"]
+[node name="Value" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Agility"]
 layout_mode = 2
 text = "180"
 
-[node name="Holiness" type="HBoxContainer" parent="MarginContainer/MarginContainer/Groups/Stats"]
+[node name="Holiness" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Holiness"]
+[node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Holiness"]
 layout_mode = 2
 text = "Holiness"
 
-[node name="Value" type="Label" parent="MarginContainer/MarginContainer/Groups/Stats/Holiness"]
+[node name="Value" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Groups/Stats/Holiness"]
 layout_mode = 2
 text = "180"
