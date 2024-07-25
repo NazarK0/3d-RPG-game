@@ -23,4 +23,31 @@ func save_to_ram(item: EquipmentItem) -> void:
 	#Game.anklet_equipment = item._data if (_type == InventoryData.TYPE.ANKLE) else null
 	#Game.feet_equipment = item._data if (_type == InventoryData.TYPE.FEET) else null
 func _pressed() -> void:
-	print('Pressed Eq')
+	match _type:
+		EquipmentData.TYPE.HEAD:
+			print('HEAD')
+		EquipmentData.TYPE.BODY:
+			print('BODY')
+		EquipmentData.TYPE.FINGER:
+			print('FINGER')
+		EquipmentData.TYPE.HAND:
+			print('HAND')
+		EquipmentData.TYPE.NECK:
+			print('NECK')
+		EquipmentData.TYPE.LEG:
+			print('LEG')
+		EquipmentData.TYPE.ANKLE:
+			print('ANKLE')
+		EquipmentData.TYPE.FEET:
+			print('FEET')
+		EquipmentData.TYPE.WEAPON_LH:
+			print('WEAPON_LH')
+		EquipmentData.TYPE.WEAPON_RH:
+			print('WEAPON_RH')
+		EquipmentData.TYPE.ARROW:
+			print('ARROW')
+		EquipmentData.TYPE.WRIST:
+			print('WRIST')
+		EquipmentData.TYPE.QUICK_ACCESS:
+			print('QUICK_ACCESS')
+		
